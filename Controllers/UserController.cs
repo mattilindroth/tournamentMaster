@@ -13,14 +13,21 @@ namespace tournamentMaster.Controllers
     public class UserController : ControllerBase
     {
         [HttpGet]
-        public IActionResult<User> Get(int id)
+        public IActionResult Get(int id)
         {
-            
+            var user = new User {
+                EmailAddress="ding@dong.com",
+                FirstName = "damien",
+                LastName = "Ingerman",
+                Password = "hashed",
+            };
+            return Ok(user);
         }
 
         [HttpPost] 
-        public IActionResult<User> Post(User user) {
-
+        public IActionResult Post(User user) {
+            
+            return Ok(user);
         }
     }
 }
