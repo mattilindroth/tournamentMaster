@@ -1,7 +1,7 @@
 export interface Tournament {
-    Id: number;
-    Name:string;     
-    Start: Date;
-    End: Date ; 
-    Location: string; 
+    id: number;
+    name:string;     
+    start: Date;
+    end: Date ; 
+    location: string; 
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Button from '@material-ui/core/Button';
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Route} from "react-router-dom";
 import Users from './Users/users';
 import TournamentsList from './Tournaments/tournaments';
 import {TopMenuBar} from './Layout/topMenuBar';
