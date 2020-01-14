@@ -9,7 +9,7 @@ using tournamentMaster.Models;
 namespace tournamentMaster.Controllers
 {
     [ApiController]
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     public class TournamentController : ControllerBase
     {
 
@@ -23,7 +23,7 @@ namespace tournamentMaster.Controllers
             _tournaments[3] = new Tournament {Id = 3, Name = "Kunnon nelinpeliä - Forever"};
             _tournaments[4] = new Tournament {Id = 4, Name = "Somero turnaus"};
         }
-        [HttpGet]
+        [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             if(id < 0 ||id > _tournaments.Length)
