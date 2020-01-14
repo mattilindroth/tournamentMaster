@@ -47,12 +47,12 @@ namespace tournamentMaster
 
             //app.UseRouting();
 
-            app.UseCors(builder =>
-                builder
-                .WithOrigins("*")
-                .AllowCredentials()
-                .AllowAnyHeader()
-                .AllowAnyMethod());
+             app.UseCors(builder =>
+                 builder
+                 .WithOrigins("http://localhost:3000/")
+                 .AllowCredentials()
+                 .AllowAnyHeader()
+                 .AllowAnyMethod());
 
             //app.UseAuthorization();
 
