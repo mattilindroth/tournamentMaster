@@ -39,7 +39,7 @@ class TournamentsList extends React.Component<ITournamentProps, ITournamentState
     }
 
     public loadTournaments = (): void => {
-        axiosInstance.get('Tournaments/')
+        axiosInstance.get('tournament/')
         .then(async res => {
             let tournamentData: Tournament[] = res.data;
             this.setState({tournaments: tournamentData});
