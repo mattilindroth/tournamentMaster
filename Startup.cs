@@ -45,11 +45,11 @@ namespace tournamentMaster
 
             //app.UseHttpsRedirection();
 
-            //app.UseRouting();
+            // app.UseRouting();
 
              app.UseCors(builder =>
                  builder
-                 .WithOrigins("http://localhost:3000/")
+                 .WithOrigins("http://localhost:3000")
                  .AllowCredentials()
                  .AllowAnyHeader()
                  .AllowAnyMethod());
@@ -60,7 +60,7 @@ namespace tournamentMaster
 
             // app.UseEndpoints(endpoints =>
             // {
-            //     endpoints.MapControllers();
+            //      endpoints.MapControllers().RequireCors("");
             // });
         }
     }

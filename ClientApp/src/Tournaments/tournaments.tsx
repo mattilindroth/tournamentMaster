@@ -9,6 +9,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import DateFormat from 'dateformat';
 
 export interface ITournamentProps {
 
@@ -40,10 +41,7 @@ class TournamentsList extends React.Component<ITournamentProps, ITournamentState
     };
 
     public render() {
-        // const noTournaments = <TableRow><TableCell >No data</TableCell></TableRow>
-        let tournamentsData: Array<Tournament> = new Array<Tournament>() ;
-        tournamentsData.push({id: 0, name: 'tst', start: new Date(), end: new Date(), location: "Nummela"});
-        tournamentsData.push({id: 1, name: 'tst2', start: new Date(), end: new Date(), location: "Karkkila"});
+        let tournamentsData = this.state.tournaments ;
         let tournaments: JSX.Element[] | undefined = undefined;
         if(tournamentsData !== undefined) {
             tournaments = tournamentsData.map((x) => 
@@ -52,10 +50,10 @@ class TournamentsList extends React.Component<ITournamentProps, ITournamentState
                     {x.name}
                 </TableCell>
                 <TableCell>
-                    {x.start.toISOString()}
+                    { DateFormat(new Date(x.start),"yyyy-MM-dd HH:mm:ss" )}
                 </TableCell>
                 <TableCell>
-                    {x.end.toISOString()}
+                    {(new Date(x.end)).toISOString()}
                 </TableCell>
                 <TableCell>
                     {x.location}
