@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.css';
-import Button from '@material-ui/core/Button';
 import { BrowserRouter, Route} from "react-router-dom";
 import Users from './Users/users';
-import TournamentsList from './Tournaments/tournaments';
+import TournamentsList from './Tournaments/tournamentsList';
 import {TopMenuBar} from './Layout/topMenuBar';
+import {TournamentView} from './Tournaments/tournamentView';
 
 const App: React.FC = () => {
   return (
@@ -14,19 +14,8 @@ const App: React.FC = () => {
             <TopMenuBar isLoggedIn={true} />
             <Route exact path="/" component={TournamentsList} />
             <Route path="/users" component={Users} />
-            <Route path="/contact" component={TournamentsList} />
-        
-          <Button variant="contained" color="primary">
-            Hello world!
-          </Button>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+            <Route path="/tournaments" component={TournamentsList} />
+            <Route path="/tournamentview/:id" component={TournamentView} />
         </header>
       </div>
     </BrowserRouter>
